@@ -462,7 +462,7 @@ const tb=el('tbody');Object.values(SHAKESPEARE_DATA.plays).forEach(p=>{if(!p.quo
 tbl.appendChild(tb);s.appendChild(tbl);root.appendChild(s);
 
 // Flashcards grid below quotes for memorize
-const f=el('div',{class:'flash-grid',attrs:{id:'flashGrid'}});const flashItems=[];Object.values(SHAKESPEARE_DATA.plays).forEach(p=>{if(!p.quotes)return;p.quotes.forEach(q=>{flashItems.push({front:p.title,back:q});});});flashItems.forEach(item=>{const card=el('div',{class:'flash-card'});const inner=el('div',{class:'flash-inner'});const front=el('div',{class:'flash-front',html:`<strong>${item.front}</strong>`});const back=el('div',{class:'flash-back',html:`${item.back}`});inner.append(front,back);card.appendChild(inner);card.addEventListener('click',()=>card.classList.toggle('flipped'));f.appendChild(card);});s.appendChild(el('h3',{text:'Flashcards: Tap Quote ↔ Play'}));s.appendChild(f);
+const f=el('div',{class:'flash-grid',attrs:{id:'flashGrid'}});const flashItems=[];Object.values(SHAKESPEARE_DATA.plays).forEach(p=>{if(!p.quotes)return;p.quotes.forEach(q=>{flashItems.push({front:q, back:p.title});});});flashItems.forEach(item=>{const card=el('div',{class:'flash-card'});const inner=el('div',{class:'flash-inner'});const front=el('div',{class:'flash-front',html:`<strong>${item.front}</strong>`});const back=el('div',{class:'flash-back',html:`${item.back}`});inner.append(front,back);card.appendChild(inner);card.addEventListener('click',()=>card.classList.toggle('flipped'));f.appendChild(card);});s.appendChild(el('h3',{text:'Flashcards: Tap Quote ↔ Play'}));s.appendChild(f);
 root.appendChild(s);
 }
 
