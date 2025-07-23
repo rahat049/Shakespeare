@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>William Shakespeare - Data Tables</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f5f5f5;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+        }
+        
+        .section {
+            margin-bottom: 40px;
+        }
+        
+        .section h2 {
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            color: white;
+            padding: 15px;
+            margin: 0 0 20px 0;
+            border-radius: 5px;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        th {
+            background-color: #34495e;
+            color: white;
+            padding: 12px;
+            text-align: left;
+            font-weight: bold;
+        }
+        
+        td {
+            padding: 10px 12px;
+            border-bottom: 1px solid #ddd;
+            vertical-align: top;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+        
+        tr:hover {
+            background-color: #e8f4f8;
+        }
+        
+        .biography-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .bio-card {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #3498db;
+        }
+        
+        .bio-card h3 {
+            color: #2c3e50;
+            margin-top: 0;
+        }
+        
+        .tragedy { background-color: #ffebee; }
+        .comedy { background-color: #e3f2fd; }
+        .history { background-color: #e8f5e8; }
+        .romance { background-color: #fff3e0; }
+        
+        .quote {
+            font-style: italic;
+            color: #555;
+        }
+        
+        .export-btn {
+            background: #27ae60;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 20px 0;
+        }
+        
+        .export-btn:hover {
+            background: #2ecc71;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>William Shakespeare (1564-1616)</h1>
+        
+        <div class="section">
+            <h2>📋 Personal Information</h2>
+            <div class="biography-grid">
+                <div class="bio-card">
+                    <h3>Basic Details</h3>
+                    <p><strong>Full Name:</strong> William Shakespeare</p>
+                    <p><strong>Born:</strong> April 23, 1564, Stratford-upon-Avon</p>
+                    <p><strong>Died:</strong> April 23, 1616 (aged 52)</p>
+                    <p><strong>Parents:</strong> John Shakespeare & Mary Arden</p>
+                </div>
+                <div class="bio-card">
+                    <h3>Family & Career</h3>
+                    <p><strong>Wife:</strong> Anne Hathaway (married 1582)</p>
+                    <p><strong>Children:</strong> Susanna, Hamnet, Judith</p>
+                    <p><strong>Profession:</strong> Actor & Playwright</p>
+                    <p><strong>Theatre:</strong> Globe Theatre</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>🎭 Literary Works by Genre</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Genre</th>
+                        <th>Count</th>
+                        <th>Notable Works</th>
+                        <th>Key Characters</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="tragedy">
+                        <td><strong>Tragedies</strong></td>
+                        <td>8</td>
+                        <td>Hamlet, Macbeth, Othello, King Lear, Romeo and Juliet, Julius Caesar</td>
+                        <td>Hamlet, Lady Macbeth, Iago, Othello, Juliet</td>
+                    </tr>
+                    <tr class="comedy">
+                        <td><strong>Comedies</strong></td>
+                        <td>13</td>
+                        <td>A Midsummer Night's Dream, Merchant of Venice, Twelfth Night</td>
+                        <td>Puck, Shylock, Viola, Rosalind, Kate</td>
+                    </tr>
+                    <tr class="history">
+                        <td><strong>Histories</strong></td>
+                        <td>10</td>
+                        <td>Henry IV, Henry V, Richard III</td>
+                        <td>Falstaff, Prince Hal, Richard III</td>
+                    </tr>
+                    <tr class="romance">
+                        <td><strong>Romances</strong></td>
+                        <td>4</td>
+                        <td>The Tempest, The Winter's Tale, Cymbeline, Pericles</td>
+                        <td>Prospero, Perdita, Imogen</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <h2>💬 Famous Quotes</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Play</th>
+                        <th>Quote</th>
+                        <th>Theme/Context</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Hamlet</strong></td>
+                        <td class="quote">"To be or not to be, that is the question."</td>
+                        <td>Human indecisiveness and mortality</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Macbeth</strong></td>
+                        <td class="quote">"Fair is foul, and foul is fair."</td>
+                        <td>Theme of ambiguity and moral confusion</td>
+                    </tr>
+                    <tr>
+                        <td><strong>As You Like It</strong></td>
+                        <td class="quote">"All the world's a stage."</td>
+                        <td>Metaphor for life and human existence</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Julius Caesar</strong></td>
+                        <td class="quote">"Cowards die many times before their deaths."</td>
+                        <td>Commentary on courage and fear</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Romeo and Juliet</strong></td>
+                        <td class="quote">"A rose by any other name would smell as sweet."</td>
+                        <td>Power and limitation of names</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <h2>👥 Key Characters</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Character</th>
+                        <th>Play</th>
+                        <th>Significance</th>
+                        <th>Character Type</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Hamlet</strong></td>
+                        <td>Hamlet</td>
+                        <td>Philosopher-prince grappling with revenge</td>
+                        <td>Tragic Hero</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Lady Macbeth</strong></td>
+                        <td>Macbeth</td>
+                        <td>Ambitious queen consumed by guilt</td>
+                        <td>Tragic Villain</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Iago</strong></td>
+                        <td>Othello</td>
+                        <td>Master manipulator exploiting jealousy</td>
+                        <td>Pure Villain</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Shylock</strong></td>
+                        <td>Merchant of Venice</td>
+                        <td>Jewish moneylender; complex character</td>
+                        <td>Controversial Antagonist</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Falstaff</strong></td>
+                        <td>Henry IV</td>
+                        <td>Comic, morally flexible knight</td>
+                        <td>Comic Relief</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <h2>🌍 Legacy & Impact</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Impact Area</th>
+                        <th>Details</th>
+                        <th>Examples</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Language Innovation</strong></td>
+                        <td>Created ~1,700 new words</td>
+                        <td>eyeball, assassination, bedroom, fashionable</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Universal Themes</strong></td>
+                        <td>Explored timeless human experiences</td>
+                        <td>Love, power, betrayal, human nature, fate vs. free will</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Global Adaptations</strong></td>
+                        <td>Works adapted across all media</td>
+                        <td>The Lion King ≈ Hamlet, West Side Story ≈ Romeo & Juliet</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Educational Impact</strong></td>
+                        <td>Required reading worldwide</td>
+                        <td>Standard curriculum in English-speaking countries</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <h2>📅 Historical Context</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Period</th>
+                        <th>Years</th>
+                        <th>Ruler</th>
+                        <th>Shakespeare's Work</th>
+                        <th>Characteristics</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Elizabethan Era</strong></td>
+                        <td>1558-1603</td>
+                        <td>Queen Elizabeth I</td>
+                        <td>Peak period, comedies & histories</td>
+                        <td>Golden age of English culture</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Jacobean Era</strong></td>
+                        <td>1603-1625</td>
+                        <td>King James I</td>
+                        <td>Darker tragedies (Macbeth, King Lear)</td>
+                        <td>More complex themes, political tension</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <h2>🎪 Theatre Practices</h2>
+            <div class="bio-card">
+                <h3>Elizabethan Theatre Facts</h3>
+                <p><strong>Actors:</strong> No female actors - boys played women's roles</p>
+                <p><strong>Venues:</strong> Open air theatres, daylight performances</p>
+                <p><strong>Audience:</strong> All social classes attended</p>
+                <p><strong>Sets:</strong> Minimal staging, relied on language</p>
+                <p><strong>Structure:</strong> 5 acts per play, iambic pentameter</p>
+            </div>
+        </div>
+
+        <button class="export-btn" onclick="downloadCSV()">📊 Download as CSV</button>
+    </div>
+
+    <script>
+        function downloadCSV() {
+            const csvData = `William Shakespeare - Comprehensive Data
+
+PERSONAL INFORMATION
+Category,Detail
+Full Name,William Shakespeare
+Born,April 23 1564 Stratford-upon-Avon
+Died,April 23 1616 (aged 52)
+Father,John Shakespeare (glovemaker)
+Mother,Mary Arden Shakespeare
+Wife,Anne Hathaway (married 1582)
+Children,Susanna Hamnet Judith
+
+LITERARY WORKS
+Genre,Count,Notable Works,Key Characters
+Tragedies,8,Hamlet Macbeth Othello King Lear Romeo and Juliet,Hamlet Lady Macbeth Iago Othello Juliet
+Comedies,13,A Midsummer Night's Dream Merchant of Venice Twelfth Night,Puck Shylock Viola Rosalind Kate
+Histories,10,Henry IV Henry V Richard III,Falstaff Prince Hal Richard III
+Romances,4,The Tempest The Winter's Tale Cymbeline Pericles,Prospero Perdita Imogen
+
+FAMOUS QUOTES
+Play,Quote,Theme
+Hamlet,To be or not to be that is the question,Human indecisiveness
+Macbeth,Fair is foul and foul is fair,Moral ambiguity
+As You Like It,All the world's a stage,Life metaphor
+Julius Caesar,Cowards die many times before their deaths,Courage vs fear
+Romeo and Juliet,A rose by any other name would smell as sweet,Power of names
+
+KEY CHARACTERS
+Character,Play,Significance,Type
+Hamlet,Hamlet,Philosopher-prince grappling with revenge,Tragic Hero
+Lady Macbeth,Macbeth,Ambitious queen consumed by guilt,Tragic Villain
+Iago,Othello,Master manipulator exploiting jealousy,Pure Villain
+Shylock,Merchant of Venice,Jewish moneylender complex character,Controversial Antagonist
+Falstaff,Henry IV,Comic morally flexible knight,Comic Relief`;
+
+            const blob = new Blob([csvData], { type: 'text/csv' });
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'shakespeare_data.csv';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            window.URL.revokeObjectURL(url);
+        }
+    </script>
+</body>
+</html>
